@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy — Spendly{% endblock %}
+
+{% block head %}
+<style>
+    .legal-hero {
+        padding: 4rem 2rem 3rem;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .legal-hero .hero-badge { margin-bottom: 1.25rem; }
+
+    .legal-hero .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin-bottom: 0.75rem;
+    }
+
+    .legal-meta {
+        font-size: 0.85rem;
+        color: var(--ink-faint);
+    }
+
+    .legal-body {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 2rem 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .legal-card {
+        background: var(--paper-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+    }
+
+    .legal-card-number {
+        display: inline-block;
+        background: var(--accent-light);
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.65rem;
+        border-radius: 999px;
+        margin-bottom: 0.85rem;
+    }
+
+    .legal-card h2 {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        color: var(--ink);
+        margin-bottom: 0.85rem;
+    }
+
+    .legal-card p {
+        font-size: 0.95rem;
+        color: var(--ink-muted);
+        line-height: 1.75;
+        margin-bottom: 0.75rem;
+    }
+
+    .legal-card p:last-child { margin-bottom: 0; }
+
+    .legal-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .legal-card ul li {
+        font-size: 0.95rem;
+        color: var(--ink-muted);
+        line-height: 1.7;
+        padding-left: 1.25rem;
+        position: relative;
+    }
+
+    .legal-card ul li::before {
+        content: '◈';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 0.6rem;
+        top: 0.45rem;
+    }
+
+    .legal-card a {
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .legal-card a:hover { text-decoration: underline; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="legal-hero">
+    <div class="hero-badge">Legal</div>
+    <h1 class="hero-title">Privacy<br><em>Policy</em></h1>
+    <p class="legal-meta">Last updated: April 2026</p>
+</div>
+
+<div class="legal-body">
+
+    <div class="legal-card">
+        <span class="legal-card-number">01</span>
+        <h2>Data We Collect</h2>
+        <p>When you use Spendly, we collect only the information necessary to provide the service:</p>
+        <ul>
+            <li>Account information — your name and email address when you register.</li>
+            <li>Expense data — amounts, categories, dates, and descriptions you enter.</li>
+            <li>Usage data — basic session information to keep you logged in securely.</li>
+        </ul>
+        <p>We do not collect payment information, government IDs, or any sensitive personal data beyond what is listed above.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">02</span>
+        <h2>How We Use Your Data</h2>
+        <p>Your data is used solely to operate and improve Spendly. Specifically, we use it to:</p>
+        <ul>
+            <li>Display your expense history, summaries, and category breakdowns.</li>
+            <li>Authenticate your account and maintain a secure session.</li>
+            <li>Improve performance and fix issues with the service.</li>
+        </ul>
+        <p>We will never use your financial data for advertising, profiling, or any purpose unrelated to the core service.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">03</span>
+        <h2>Data Storage</h2>
+        <p>Your data is stored securely on our servers. We apply reasonable technical and organisational measures to protect it against unauthorised access, loss, or disclosure.</p>
+        <p>If you delete your account, all associated data will be permanently removed from our systems within 30 days.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">04</span>
+        <h2>Third-Party Services</h2>
+        <p>Spendly does not sell or share your personal data with third parties for commercial purposes. We may use a limited set of trusted infrastructure providers (e.g. hosting, database) who process data strictly on our behalf and under confidentiality obligations.</p>
+        <p>We do not integrate third-party advertising, analytics, or social tracking tools.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">05</span>
+        <h2>Your Rights</h2>
+        <p>You have full control over your data. At any time you may:</p>
+        <ul>
+            <li>Access and export the expense data stored in your account.</li>
+            <li>Update or correct your account information via profile settings.</li>
+            <li>Request permanent deletion of your account and all associated data.</li>
+        </ul>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">06</span>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy as the service evolves. When we do, we will revise the "Last updated" date at the top of this page.</p>
+        <p>We encourage you to review this page periodically. Continued use of Spendly after changes are posted means you accept the revised policy.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">07</span>
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or how your data is handled, please reach out via the contact information provided within the app.</p>
+        <p>You can also review our <a href="/terms">Terms and Conditions</a> for more details on how Spendly operates.</p>
+    </div>
+
+</div>
+
+{% endblock %}
