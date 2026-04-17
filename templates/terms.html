@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}Terms and Conditions — Spendly{% endblock %}
+
+{% block head %}
+<style>
+    .legal-hero {
+        padding: 4rem 2rem 3rem;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .legal-hero .hero-badge { margin-bottom: 1.25rem; }
+
+    .legal-hero .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin-bottom: 0.75rem;
+    }
+
+    .legal-meta {
+        font-size: 0.85rem;
+        color: var(--ink-faint);
+    }
+
+    .legal-body {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 2rem 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .legal-card {
+        background: var(--paper-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+    }
+
+    .legal-card-number {
+        display: inline-block;
+        background: var(--accent-light);
+        color: var(--accent);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.65rem;
+        border-radius: 999px;
+        margin-bottom: 0.85rem;
+    }
+
+    .legal-card h2 {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        color: var(--ink);
+        margin-bottom: 0.85rem;
+    }
+
+    .legal-card p {
+        font-size: 0.95rem;
+        color: var(--ink-muted);
+        line-height: 1.75;
+        margin-bottom: 0.75rem;
+    }
+
+    .legal-card p:last-child { margin-bottom: 0; }
+
+    .legal-card ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .legal-card ul li {
+        font-size: 0.95rem;
+        color: var(--ink-muted);
+        line-height: 1.7;
+        padding-left: 1.25rem;
+        position: relative;
+    }
+
+    .legal-card ul li::before {
+        content: '◈';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 0.6rem;
+        top: 0.45rem;
+    }
+
+    .legal-card a {
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .legal-card a:hover { text-decoration: underline; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="legal-hero">
+    <div class="hero-badge">Legal</div>
+    <h1 class="hero-title">Terms and<br><em>Conditions</em></h1>
+    <p class="legal-meta">Last updated: April 2026</p>
+</div>
+
+<div class="legal-body">
+
+    <div class="legal-card">
+        <span class="legal-card-number">01</span>
+        <h2>Acceptance of Terms</h2>
+        <p>By accessing or using Spendly, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use the service.</p>
+        <p>These terms apply to all visitors, users, and anyone else who accesses the platform.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">02</span>
+        <h2>Use of Service</h2>
+        <p>Spendly is a personal expense tracking tool intended for individual, non-commercial use. By using the service, you agree to:</p>
+        <ul>
+            <li>Provide accurate information when creating your account.</li>
+            <li>Keep your login credentials secure and confidential.</li>
+            <li>Not use the service for any unlawful or fraudulent purpose.</li>
+            <li>Not attempt to reverse-engineer, disrupt, or misuse the platform.</li>
+        </ul>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">03</span>
+        <h2>User Data</h2>
+        <p>You retain full ownership of the data you enter into Spendly. By using the service, you grant Spendly a limited license to store and process your data solely for the purpose of providing the service.</p>
+        <p>We do not sell, share, or disclose your personal financial data to third parties except as required by law. For more details, see our <a href="/privacy">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">04</span>
+        <h2>Account Termination</h2>
+        <p>We reserve the right to suspend or terminate accounts that violate these terms, engage in abusive behaviour, or remain inactive for an extended period.</p>
+        <p>You may delete your account at any time through your profile settings. Upon deletion, your data will be removed from our systems.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">05</span>
+        <h2>Limitation of Liability</h2>
+        <p>Spendly is provided "as is" without warranties of any kind. We are not liable for any loss of data, financial decisions made based on information displayed in the app, or service interruptions.</p>
+        <p>Your use of Spendly is entirely at your own discretion and risk.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">06</span>
+        <h2>Changes to Terms</h2>
+        <p>We may update these Terms and Conditions from time to time. When we do, we will revise the "Last updated" date at the top of this page.</p>
+        <p>Continued use of Spendly after changes are posted constitutes your acceptance of the revised terms.</p>
+    </div>
+
+    <div class="legal-card">
+        <span class="legal-card-number">07</span>
+        <h2>Contact</h2>
+        <p>If you have any questions about these terms or how Spendly operates, please reach out via the contact information provided within the app.</p>
+    </div>
+
+</div>
+
+{% endblock %}
