@@ -147,6 +147,68 @@
     .fill-food    { background: #c17f24; width: 78%; }
     .fill-travel  { background: #5b7fa6; width: 55%; }
     .fill-bills   { background: #8b5e83; width: 40%; }
+
+    /* Video modal */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        z-index: 500;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+    .modal-overlay.open {
+        display: flex;
+    }
+
+    .modal-box {
+        background: var(--ink);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        width: 100%;
+        max-width: 780px;
+        position: relative;
+        box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: background 0.2s;
+    }
+
+    .modal-close:hover { background: rgba(255,255,255,0.28); }
+
+    .modal-video-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+    }
+
+    .modal-video-wrap iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+    }
 </style>
 {% endblock %}
 
@@ -164,7 +226,7 @@
     </p>
     <div class="hero-actions">
         <a href="{{ url_for('register') }}" class="btn-primary">Create free account</a>
-        <a href="{{ url_for('login') }}" class="btn-ghost">See how it works</a>
+        <button id="open-video-modal" class="btn-ghost">See how it works</button>
     </div>
 
     <div class="mock-browser">
@@ -237,4 +299,52 @@
     </div>
 </section>
 
+<!-- Video modal -->
+<div id="video-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box">
+        <button id="close-video-modal" class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-video-wrap">
+            <iframe
+                id="video-iframe"
+                src=""
+                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+    var overlay  = document.getElementById('video-modal');
+    var iframe   = document.getElementById('video-iframe');
+    var openBtn  = document.getElementById('open-video-modal');
+    var closeBtn = document.getElementById('close-video-modal');
+
+    function openModal() {
+        iframe.src = iframe.dataset.src;
+        overlay.classList.add('open');
+    }
+
+    function closeModal() {
+        overlay.classList.remove('open');
+        iframe.src = '';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+    });
+}());
+</script>
 {% endblock %}
